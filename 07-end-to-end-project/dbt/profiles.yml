@@ -1,0 +1,21 @@
+networkrail:
+  target: dbt_proton
+
+  outputs:
+    dbt_proton:
+      type: bigquery
+      method: service-account
+      project: deb2-200016
+      dataset: dbt_proton
+      threads: 1
+      keyfile: /workspaces/data-engineering-bootcamp/07-end-to-end-project/dbt/deb2-200016-analytics-with-dbt-60ab2fbf83e0.json
+      location: asia-southeast1
+
+    prod:
+      type: bigquery
+      method: service-account
+      project: deb2-200016
+      dataset: networkrail
+      threads: 1
+      keyfile: /workspaces/data-engineering-bootcamp/07-end-to-end-project/dbt/deb2-200016-analytics-with-dbt-60ab2fbf83e0.json
+      location: asia-southeast1
